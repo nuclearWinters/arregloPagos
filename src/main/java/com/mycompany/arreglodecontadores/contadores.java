@@ -17,6 +17,7 @@ public class contadores {
         Scanner numeroEmpleados = new Scanner(System.in);
         int largoDelArreglo = numeroEmpleados.nextInt();
         int arregloDePagas[] = {0,0,0,0,0,0,0,0,0};
+        String arregloDeRangos[] = {"200-299","300-399","400-499","500-599","600-699","700-799","800-899","900-999","+1000"};
         for (int inicio = 0;inicio<largoDelArreglo;inicio++) {
             System.out.println("Introduce la venta semanal en enteros: ");
             Scanner venta = new Scanner(System.in);
@@ -37,13 +38,13 @@ public class contadores {
                 arregloDePagas[6]++;
             } else if (salarioMasVenta < 999 && salarioMasVenta > 900) {
                 arregloDePagas[7]++;
-            } else if (salarioMasVenta < 1000) {
+            } else if (salarioMasVenta > 1000) {
                 arregloDePagas[8]++;
             }
         }
-        System.out.println("Index\tValue");
-        for (int inicio = 0;inicio<arregloDePagas.length-1;inicio++) {
-            System.out.println(inicio + "\t" + arregloDePagas[inicio]);
+        System.out.println("Rango de Paga\t\tCantidad de Empleados");
+        for (int inicio = 0;inicio<=arregloDePagas.length-1;inicio++) {
+            System.out.println(arregloDeRangos[inicio] + "\t\t\t" + arregloDePagas[inicio]);
         }
     }
 }
